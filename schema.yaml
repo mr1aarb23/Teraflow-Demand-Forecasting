@@ -1,0 +1,21 @@
+Columns:
+  OrderDate : object
+  ProductID : int64
+  Quantity : int64
+
+ColumnsName:
+  OrderDate : "orderDate"
+  ProductID : "product"
+  Quantity : "numberSold" 
+
+
+models_dir_names :
+    Fourier: Fourier
+    HoltWinters: HoltWinters
+    Croston: Croston
+    LinearRegression: LinearRegression
+    SVR: SVR
+    XGBoost: XGBoost
+    CNN: CNN
+    LSTM: LSTM
+    GRU: GRU  

@@ -1,0 +1,88 @@
+artifacts_root: src/artifacts
+
+########### Data Ingestion
+
+data_ingestion:
+    root_dir : src/artifacts/data_ingestion
+    local_data_file : src/data.csv
+
+########### Data Transformation
+
+data_transformation:
+    root_dir: src/artifacts/data_transformation
+    data_path: src/artifacts/data_ingestion/data.csv
+
+########### Model Trainer
+
+model_trainer_Fourier:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/Fourier
+    data_path: src/artifacts/data_transformation/train.csv
+    data_path: src/artifacts/data_transformation/train_data.csv
+
+
+model_trainer_LR:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/LR
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+model_trainer_SVR:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/SVR
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+
+model_trainer_XGBoost:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/XGBoost
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+
+model_trainer_CNN:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/CNN
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+model_trainer_LSTM:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/LSTM
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+model_trainer_GRU:
+    root_dir: src/artifacts/model_trainer
+    model_dir_name: src/artifacts/model_trainer/GRU
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+
+########### Model Evaluation
+
+model_evaluation:
+    root_dir: src/artifacts/model_evaluation
+    data_path: src/artifacts/data_transformation/train.csv
+    X_scaled_path: src/artifacts/data_transformation/X_scaled.csv
+    y_scaled_path: src/artifacts/data_transformation/y_scaled.csv
+    scaler_path: src/artifacts/data_transformation/scaler.pkl
+
+########## Model Selection
+model_selection:
+    root_dir: src/artifacts/model_selection
+    eval_dir: src/artifacts/model_evaluation
+    models_dir: src/artifacts/model_trainer
+
+########## Model Forecast
+model_forecast:
+    root_dir: src/artifacts/model_forecast
+    model_dir: src/artifacts/model_selection/Forecast_model
+    data_path: src/artifacts/data_transformation/train_data.csv
+    scaler_path: src/artifacts/data_transformation/scaler.pkl

@@ -1,0 +1,17 @@
+Horizon:
+    H : 365
+
+CNN:
+    epochs : 10
+    learning_rate : 0.0001
+    early_stopping : 20
+
+LSTM:
+    epochs : 10
+    learning_rate : 0.001
+    early_stopping : 20
+
+GRU:
+    epochs : 10
+    learning_rate : 0.001
+    early_stopping : 20
